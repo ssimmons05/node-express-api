@@ -7,25 +7,25 @@ const port = 8091
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get('/hello', (req, res) => {
+app.get('/timer', (req, res) => {
   res.send('Hello World from Express')
 })
 
-app.get('/hello/:hello_id', (req, res) => {
-    res.json({"id": req.params.hello_id})
+app.get('/timer/:timer_id', (req, res) => {
+    res.json({"id": req.params.timer_id})
 })
 
-app.post('/object', (req, res) => {
-    const myObj = [{ "numGears": "6"},{ "numGears": "2"}];
-    res.json(myObj)
+app.post('/timer', (req, res) => {
+    const response = { "id": "6", "err": "false"};
+    res.json(response)
   })
 
-app.put('/hello/:hello_id', (req, res) => {
-    res.json({"id": req.params.hello_id})
+app.put('/timer/:timer_id', (req, res) => {
+    res.json({"id": req.params.timer_id})
 })
 
-app.delete('/hello/:hello_id', (req, res) => {
-    res.json({"id": req.params.hello_id})
+app.delete('/timer/:timer_id', (req, res) => {
+    res.json({"id": req.params.timer_id})
 })
 
 app.listen(port, () => {
