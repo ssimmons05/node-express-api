@@ -8,13 +8,13 @@ const studentData = [
     { name: 'Tobi', email: 'tobi@skc.org' }
   ];
 
-// "middleware" function executes whenever the /student route is requested
-/*
+// "middleware" function executes whenever the /student route is requested... any function with access to the req and res objects is "middleware"
+
 router.use(function timeLog(req, res, next) {
     console.log('Time: ', Date.now())
     next()
 })
-*/
+
 // add our routes (HTTP method + endpoint)
 router.get('/', (req, res) => {
     res.json(studentData);
@@ -38,6 +38,3 @@ router.delete('/:studentId', (req, res) => {
 })
 
 module.exports = router
-
-
-
